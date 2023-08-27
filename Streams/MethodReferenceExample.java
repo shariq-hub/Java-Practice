@@ -55,7 +55,7 @@ public class MethodReferenceExample{
        .forEach(A::print2);
 
 
-        //Constructor Reference
+        //Constructor Reference 
          B a2=A::new;
          a2.getMessage("Something");
          
