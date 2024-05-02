@@ -31,7 +31,7 @@ class A{
     }
 
     public List<A> getList(){
-       return IntStream.range(1, 10)
+       return IntStream.range(1, 3)
         .mapToObj(i-> new A("Shariq"))
         .collect(Collectors.toList());
     }
@@ -43,25 +43,33 @@ class A{
 public class MethodReferenceExample{
 
     public static void main(String[] args) {
-      //Static Method Reference
-        A a=new A("Shariq");
-       a.getList()
-       .forEach(A::print);
+    //   //Static Method Reference
+    //     A a=new A("Shariq");
+    //    a.getList()
+    //    .forEach(A::print);
 
 
-       //instance method Reference
-         A a1=new A("Shariq");
-       a1.getList()
-       .forEach(A::print2);
+    //    //instance method Reference
+    //      A a1=new A("Shariq");
+    //    a1.getList()
+    //    .forEach(A::print2);
 
 
-        //Constructor Reference 
-         B a2=A::new;
-         a2.getMessage("Something");
-         
+    //     //Constructor Reference 
+    //      B a2=A::new;
+    //      a2.getMessage("Something");
 
-      
+
+        final String s="Hello";
+
         
-        
+
+        System.out.println(s);
     }
+
+
+    public static void saySomething(){  
+        System.out.println("Hello, this is static method.");  
+    }  
+
 }

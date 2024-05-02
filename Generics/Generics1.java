@@ -3,38 +3,39 @@ package Generics;
 import java.util.ArrayList;
 import java.util.List;
 
-
- interface Shape {
-    double getArea();
-    double getCircumference();
-}
- interface DeletableShape extends Shape {
-}
-
- class Rectangle implements DeletableShape {
-
-    @Override
-    public double getArea() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getArea'");
-    }
-
-    @Override
-    public double getCircumference() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getCircumference'");
-    }
-    // implementation details
-}
-
 public class Generics1 {
     public static void main(String[] args) {
-        List<String> list1=new ArrayList<>();
 
-
+        List<A<Integer>> a=new ArrayList<>();
+        A<Integer> a1=new A(1);
+        a.add(a1);
+        a.forEach(x->System.out.println(x));
     }
    
+}
 
-    
-    
+//we can't use ? on class level because It doesn't make sense to use it ! because if I use T I can get it and access in on class
+class A<T>{
+
+    private T value;
+
+    public A(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+
+    @Override
+    public String toString(){
+        return "value is : "+value;
+
+    }
+
 }

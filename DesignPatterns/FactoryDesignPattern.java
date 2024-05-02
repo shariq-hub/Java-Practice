@@ -4,10 +4,6 @@ interface Office{
     public String getId();
     public String getName();
     public String getEmail();
-
-   
-	
-
 }
 
 class PrivateOffice implements Office{

@@ -31,15 +31,14 @@ public class Task1 {
                 fis.read(readData);
                 fis.close();
                 String strData = new String(readData);
-                StringTokenizer stringTokenizer = new StringTokenizer(strData,"? ,");
+                StringTokenizer stringTokenizer = new StringTokenizer(strData," ?");
                 int tokens = stringTokenizer.countTokens();
                 System.out.println("No of words in your text:" +tokens);
                 while (stringTokenizer.hasMoreTokens()) {
                  
                     String token = stringTokenizer.nextToken();
                     if (token.equals(wordToSearch)) {
-                      count++;
-                      
+                      count++; 
                     }
                     
                 }
